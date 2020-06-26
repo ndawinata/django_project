@@ -1,0 +1,26 @@
+#banner {
+    width: 100%;
+    height: 280px;
+}
+
+nav ul {
+    background-color: #555;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+nav li{
+    float: left;
+}
+
+nav a {
+    color: aliceblue;
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: red;
+}

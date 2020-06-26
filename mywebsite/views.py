@@ -6,6 +6,7 @@ def index(request):
     context = {
         'judul': 'Halaman Home',
         'penulis': 'nanda winata',
+        'banner':'img/logo.jpg',
         'nav': [
             ['/', 'Home'],
             ['blog/', 'Blog'],
