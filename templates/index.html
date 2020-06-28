@@ -9,16 +9,38 @@
 </head>
 <body>
     <img id="banner" src="{% static banner %}" alt="">
-    <nav>
-        <ul>
-            {% for link,nama in nav  %}
-                <li>
-                    <a href="{{link}}">{{nama}}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
+    {% include 'snippets/navbar.html' %}
     <h1>selamat datang di {{judul}}</h1>
     <h4>penulis : {{penulis}}</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="pregnancies">pregnancies :</label>
+        <input type="text" name="pregnancies" id="pregnancies">
+        <br>
+        <label for="glucose">glucose :</label>
+        <input type="text" name="glucose" id="glucose">
+        <br>
+        <label for="bloodPressure">bloodPressure :</label>
+        <input type="text" name="bloodPressure" id="bloodPressure">
+        <br>
+        <label for="skin">skin thickness :</label>
+        <input type="text" name="skin" id="skin">
+        <br>
+        <label for="insulin">insulin :</label>
+        <input type="text" name="insulin" id="insulin">
+        <br>
+        <label for="bmi">bmi :</label>
+        <input type="text" name="bmi" id="bmi">
+        <br>
+        <label for="diabetesPedigreeFunction">diabetes Pedigree Function :</label>
+        <input type="text" name="diabetesPedigreeFunction" id="diabetesPedigreeFunction">
+        <br>
+        <label for="age">age :</label>
+        <input type="text" name="age" id="age">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    hasil prediksi : {{hasil}}
+    <br>
 </body>
 </html>
