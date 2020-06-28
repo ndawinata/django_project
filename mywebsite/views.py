@@ -4,11 +4,12 @@ import pickle
 
 def index(request):
     module_dir = os.path.dirname(__file__)
-    file_path = os.path.join(module_dir, 'namasiswa.data')
+    file_path = os.path.join(module_dir, 'model.pkl')
     f = open(file_path, 'rb')
-    nama_siswa = pickle.load(f)
+    model = pickle.load(f)
     f.close()
-    print(nama_siswa)
+    print(model.predict([[6,148,72,35,0,33.6,0.627,50]]))
+
     context = {
         'judul': 'Halaman Home',
         'penulis': 'nanda winata',
@@ -18,7 +19,7 @@ def index(request):
             ['blog/', 'Blog'],
             ['blog/recent/', 'Recent']
         ],
-        # 'nama': nama_siswa,
+        'hasil': model.predict([[6,148,72,35,0,33.6,0.627,50]]),
     }
     return render(request, 'index.html', context)
 
